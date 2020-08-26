@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Diabetes Milletus Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+        <div style="float:left">
+    	    <input type="text" name="preg" placeholder="preg" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="plasma" placeholder="plasma" required="required" />
+        </div>
+
+        <div style="float:left">
+            <input type="text" name="pres" placeholder="pres" required="required" />
+        </div>
+        <div style="float:right">
+       
+            <input type="text" name="snow" placeholder="snow" required="required" />
+        </div>
+        <div style="float:left">
+
+            <input type="text" name="test" placeholder="test" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="mass" placeholder="mass" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="pedi" placeholder="pedi" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="age" placeholder="age" required="required" />
+        </div>
+       
+       
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
